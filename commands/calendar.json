@@ -1,0 +1,39 @@
+[
+  {
+    "id": "calendar_add_permission",
+    "category": "Calendar",
+    "title": "Add calendar permission",
+    "baseCommand": "Add-MailboxFolderPermission",
+    "description": "Adds permissions to a user's calendar",
+    "parameters": [
+      {
+        "name": "identity",
+        "label": "Target calendar",
+        "type": "text",
+        "placeholder": "user@domain.com:\\Calendar",
+        "required": true,
+        "flag": "-Identity"
+      },
+      {
+        "name": "user",
+        "label": "User email",
+        "type": "email",
+        "placeholder": "target@domain.com",
+        "required": true,
+        "flag": "-User"
+      },
+      {
+        "name": "accessRights",
+        "label": "Access rights",
+        "type": "select",
+        "required": true,
+        "flag": "-AccessRights",
+        "options": [
+          "Reviewer",
+          "Editor",
+          "Owner"
+        ]
+      }
+    ]
+  }
+]
