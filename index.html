@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>PowerShell Command Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
+    <script type="module" src="js/app.js"></script>
+    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,21 +17,13 @@
 </header>
 
 <main>
-    <section>
-        <label for="commandSelect">Command</label>
-        <select id="commandSelect">
-            <option value="">-- Select a command --</option>
-        </select>
-    </section>
-
-    <section id="formContainer">
-        <!-- Dynamic inputs go here -->
-    </section>
+    <section id="command-type"></section>
+    <section id="command-selector" style="display:none"></section>
+    <section id="formContainer" style="display:none"></section>
 
     <section>
         <h3>Generated Command</h3>
         <pre id="output"></pre>
-        <button id="copyBtn" disabled>Copy</button>
     </section>
 </main>
 
