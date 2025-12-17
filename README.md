@@ -9,7 +9,7 @@ Powershell Command Helper is simple web UI tool with intention of generating com
 
 ## How it works
 My goal was easy maintanence. UI is heavily JavaScript based with purpose of translating JSON files which can be found in _commands_ folder.
-There's index JSON, which serves as a list of available permissions types. Each type then matches existing JSON file which lists available commands of the selected type.
+There's index JSON, which serves as a list of available permissions types. Each type then matches with existing JSON file which lists available commands of the selected type.
 Rest is just eye candy and design conveniences.
 
 ## Conclusions
