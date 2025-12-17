@@ -3,11 +3,20 @@ import { buildCommand } from "./builder.js";
 export function populateCommandTypes(categories) {
     const container = document.getElementById("command-type");
     container.innerHTML = "";
-
+    
     categories.forEach(cat => {
         const btn = document.createElement("button");
         btn.textContent = cat.Name;
+
         btn.addEventListener("click", () => {
+            hideForm(); // reset when new type is selected.
+
+            container.querySelectorAll("button").forEach(b =>
+                b.classList.remove("active")
+            );
+
+            btn.classList.add("active");
+
             renderCommandSelector(cat);
         });
         container.appendChild(btn);
@@ -17,14 +26,22 @@ export function populateCommandTypes(categories) {
 export function renderCommandSelector(category) {
     const container = document.getElementById("command-selector");
     container.style.display = "block";
-    container.innerHTML = "";
+    container.innerHTML = "<h4>Select action you want to use</h4>";
 
     const commands = Object.values(category.Content);
 
     commands.forEach(cmd => {
         const btn = document.createElement("button");
         btn.textContent = cmd.title;
-        btn.addEventListener("click", () => renderForm(cmd));
+        btn.addEventListener("click", () => {
+            container.querySelectorAll("button").forEach(b =>
+                b.classList.remove("active")
+            );
+
+            btn.classList.add("active");
+
+            renderForm(cmd);
+        } );
         container.appendChild(btn);
     });
 }
@@ -63,11 +80,19 @@ export function renderForm(command) {
 
     const generateBtn = document.createElement("button");
     generateBtn.textContent = "Generate Command";
+    generateBtn.classList.add("generate");
+
     generateBtn.addEventListener("click", () => {
         const cmd = buildCommand(command);
         const output = document.getElementById("output");
         output.textContent = cmd;
         output.style.display = "block";
     });
+
     formContainer.appendChild(generateBtn);
+}
+
+export function hideForm(){
+    const formContainer = document.getElementById("formContainer");
+    formContainer.style.display = "none";
 }

@@ -1,17 +1,34 @@
 {
   "Name": "Calendar Permissions",
   "Content": {
-    "Add calendar permissions": {
-      "id": "calendar_add_permission",
-      "title": "Add calendar permission",
-      "baseCommand": "Add-MailboxFolderPermission",
-      "description": "Adds permissions to a user's calendar",
+    "Get calendar permissions": {
+      "id": "calendar_get_permission",
+      "title": "Get calendar permission",
+      "baseCommand": "Get-MailboxFolderPermission",
+      "description": "Returns list of identities accessing the calendar",
       "parameters": [
         {
           "name": "identity",
           "label": "Target calendar",
           "type": "text",
-          "placeholder": "user@domain.com",
+          "placeholder": "calendar@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}:\\calendar"
+        }
+      ]
+    },
+    "Add calendar permissions": {
+      "id": "calendar_add_permission",
+      "title": "Add calendar permission",
+      "baseCommand": "Add-MailboxFolderPermission",
+      "description": "Adds permissions to a calendar",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target calendar",
+          "type": "text",
+          "placeholder": "calendar@domain.com",
           "required": true,
           "flag": "-Identity",
           "template": "{value}:\\calendar"
@@ -20,7 +37,7 @@
           "name": "user",
           "label": "User email",
           "type": "email",
-          "placeholder": "target@domain.com",
+          "placeholder": "user@domain.com",
           "required": true,
           "flag": "-User"
         },
@@ -31,8 +48,57 @@
           "required": true,
           "flag": "-AccessRights",
           "options": [
+            "None",
             "Reviewer",
+            "Author",
+            "Contributor",
             "Editor",
+            "NonEditingAuthor",
+            "PublishingEditor",
+            "PublishingAuthor",
+            "Owner"
+          ]
+        }
+      ]
+    },
+    "Set calendar prmissions": {
+      "id": "calendar_set_permission",
+      "title": "Set calendar permission",
+      "baseCommand": "Set-MailboxFolderPermission",
+      "description": "Amends existing user's permissions to a calendar",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target calendar",
+          "type": "text",
+          "placeholder": "calendar@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}:\\calendar"
+        },
+        {
+          "name": "user",
+          "label": "User email",
+          "type": "email",
+          "placeholder": "user@domain.com",
+          "required": true,
+          "flag": "-User"
+        },
+        {
+          "name": "accessRights",
+          "label": "Access rights",
+          "type": "select",
+          "required": true,
+          "flag": "-AccessRights",
+          "options": [
+            "None",
+            "Reviewer",
+            "Author",
+            "Contributor",
+            "Editor",
+            "NonEditingAuthor",
+            "PublishingEditor",
+            "PublishingAuthor",
             "Owner"
           ]
         }
@@ -42,13 +108,13 @@
       "id": "calendar_remove_permission",
       "title": "Remove calendar permission",
       "baseCommand": "Remove-MailboxFolderPermission",
-      "description": "Removes permissions from a user's calendar",
+      "description": "Removes user's permissions from a calendar",
       "parameters": [
         {
           "name": "identity",
           "label": "Target calendar",
           "type": "text",
-          "placeholder": "user@domain.com",
+          "placeholder": "calendar@domain.com",
           "required": true,
           "flag": "-Identity",
           "template": "{value}:\\calendar"
@@ -57,7 +123,7 @@
           "name": "user",
           "label": "User email",
           "type": "email",
-          "placeholder": "target@domain.com",
+          "placeholder": "user@domain.com",
           "required": true,
           "flag": "-User"
         }

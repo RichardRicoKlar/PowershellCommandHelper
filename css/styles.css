@@ -1,6 +1,13 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: system-ui, sans-serif;
-    background: #eee;
+    font-family: Calibri, system-ui, sans-serif;
+    color: black;
+    background: whitesmoke;
     padding: 2rem;
 }
 
@@ -8,10 +15,32 @@ header {
     margin-bottom: 2rem;
 }
 
+#bg {
+    position: fixed;
+    opacity: 0.05;
+    inset: 0;
+    z-index: -1;
+}
+
+h5 {
+    color: white;
+    margin-bottom: 0.1rem;
+    padding: 0;
+    opacity: 0.5;
+}
+
 section {
-    background: #ddd;
+    background: #666;
+    color:  white;
     padding: 1rem;
     margin-bottom: 1.5rem;
+    border-radius: 6px;
+}
+
+#content-holder{
+    background-color: #444;
+    box-shadow: 0px 0px 25px #333;
+    padding: 10px;
     border-radius: 6px;
 }
 
@@ -22,6 +51,7 @@ label {
 }
 
 input, select {
+    display: block;
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -29,8 +59,10 @@ input, select {
 
 pre {
     background: #fff;
+    color: black;
     padding: 1rem;
     min-height: 2.5rem;
+    border: 1px #888 solid;
 }
 
 #command-type button {
@@ -44,8 +76,14 @@ pre {
 }
 
 #command-type button:hover {
-    background: dodgerblue;
+    background: #333;
+    color: #eee;
     transition: 0.3s;
+}
+
+#command-type button.active {
+    background: #333;
+    color: #eee;
 }
 
 #command-selector button {
@@ -59,6 +97,27 @@ pre {
 }
 
 #command-selector button:hover {
+    background: #333;
+    color: #eee;
+    transition: 0.3s;
+}
+
+#command-selector button.active {
+    background: #333;
+    color: #eee;
+}
+
+button.generate {
+    margin: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #888;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button.generate:hover {
     background: dodgerblue;
     transition: 0.3s;
 }

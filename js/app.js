@@ -1,4 +1,5 @@
 import { populateCommandTypes } from "./ui.js";
+import { initBackground } from "./background.js";
 
 let categories = [];
 
@@ -21,6 +22,7 @@ async function loadCategories() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+    initBackground();
     await loadCategories();
     populateCommandTypes(categories);
 });

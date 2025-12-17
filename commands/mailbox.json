@@ -1,4 +1,129 @@
 {
   "Name": "Mailbox Permissions",
-  "Content": {}
+  "Content": {
+    "Get mailbox permissions": {
+      "id": "mailbox_get_permission",
+      "title": "Get mailbox permission",
+      "baseCommand": "Get-MailboxPermission",
+      "description": "Returns list of identities accessing the mailbox",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target mailbox / shared mailbox",
+          "type": "text",
+          "placeholder": "mailbox@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}"
+        }
+      ]
+    },
+    "Add mailbox permissions": {
+      "id": "mailbox_add_permission",
+      "title": "Add mailbox permission",
+      "baseCommand": "Add-MailboxPermission",
+      "description": "Adds permissions to a mailbox",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target mailbox / shared mailbox",
+          "type": "text",
+          "placeholder": "mailbox@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}"
+        },
+        {
+          "name": "user",
+          "label": "User email",
+          "type": "email",
+          "placeholder": "user@domain.com",
+          "required": true,
+          "flag": "-User"
+        },
+        {
+          "name": "accessRights",
+          "label": "Access rights",
+          "type": "select",
+          "required": true,
+          "flag": "-AccessRights",
+          "options": [
+            "None",
+            "ChangeOwner",
+            "ChangePermission",
+            "DeleteItem",
+            "ExternalAccount",
+            "FullAccess",
+            "ReadPermission"
+          ]
+        }
+      ]
+    },
+    "Set mailbox permissions": {
+      "id": "mailbox_set_permission",
+      "title": "Set mailbox permission",
+      "baseCommand": "Set-MailboxPermission",
+      "description": "Adds permissions to a mailbox",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target mailbox / shared mailbox",
+          "type": "text",
+          "placeholder": "mailbox@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}"
+        },
+        {
+          "name": "user",
+          "label": "User email",
+          "type": "email",
+          "placeholder": "user@domain.com",
+          "required": true,
+          "flag": "-User"
+        },
+        {
+          "name": "accessRights",
+          "label": "Access rights",
+          "type": "select",
+          "required": true,
+          "flag": "-AccessRights",
+          "options": [
+            "None",
+            "ChangeOwner",
+            "ChangePermission",
+            "DeleteItem",
+            "ExternalAccount",
+            "FullAccess",
+            "ReadPermission"
+          ]
+        }
+      ]
+    },
+    "Remova mailbox permissions": {
+      "id": "mailbox_set_permission",
+      "title": "Set mailbox permission",
+      "baseCommand": "Set-MailboxPermission",
+      "description": "Adds permissions to a mailbox",
+      "parameters": [
+        {
+          "name": "identity",
+          "label": "Target mailbox / shared mailbox",
+          "type": "text",
+          "placeholder": "mailbox@domain.com",
+          "required": true,
+          "flag": "-Identity",
+          "template": "{value}"
+        },
+        {
+          "name": "user",
+          "label": "User email",
+          "type": "email",
+          "placeholder": "user@domain.com",
+          "required": true,
+          "flag": "-User"
+        }
+      ]
+    }
+  }
 }
