@@ -63,7 +63,7 @@
       "id": "mailbox_set_permission",
       "title": "Set mailbox permission",
       "baseCommand": "Set-MailboxPermission",
-      "description": "Adds permissions to a mailbox",
+      "description": "Changes existing user's permissions to a mailbox",
       "parameters": [
         {
           "name": "identity",
@@ -100,11 +100,11 @@
         }
       ]
     },
-    "Remova mailbox permissions": {
-      "id": "mailbox_set_permission",
-      "title": "Set mailbox permission",
-      "baseCommand": "Set-MailboxPermission",
-      "description": "Adds permissions to a mailbox",
+    "Remove mailbox permissions": {
+      "id": "mailbox_remove_permission",
+      "title": "Remove mailbox permission",
+      "baseCommand": "Remove-MailboxPermission",
+      "description": "Removes user's permissions from a mailbox",
       "parameters": [
         {
           "name": "identity",

@@ -7,7 +7,7 @@
 body {
     font-family: Calibri, system-ui, sans-serif;
     color: black;
-    background: whitesmoke;
+    background: white;
     padding: 2rem;
 }
 
@@ -23,23 +23,22 @@ header {
 }
 
 h5 {
-    color: white;
     margin-bottom: 0.1rem;
     padding: 0;
     opacity: 0.5;
 }
 
 section {
-    background: #666;
-    color:  white;
+    background: white;
     padding: 1rem;
     margin-bottom: 1.5rem;
     border-radius: 6px;
+    box-shadow: 0px 0px 5px grey;
 }
 
 #content-holder{
-    background-color: #444;
-    box-shadow: 0px 0px 25px #333;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 25px whitesmoke;
     padding: 10px;
     border-radius: 6px;
 }

@@ -65,7 +65,7 @@
       "id": "calendar_set_permission",
       "title": "Set calendar permission",
       "baseCommand": "Set-MailboxFolderPermission",
-      "description": "Amends existing user's permissions to a calendar",
+      "description": "Changes existing user's permissions to a calendar",
       "parameters": [
         {
           "name": "identity",
