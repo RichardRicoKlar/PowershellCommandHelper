@@ -11,6 +11,10 @@ body {
     padding: 2rem;
 }
 
+h1{
+    color: black;
+}
+
 header {
     margin-bottom: 2rem;
 }
