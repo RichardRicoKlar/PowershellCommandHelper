@@ -2,7 +2,7 @@
 Powershell Command Helper is simple web UI tool with intention of generating commands for anyone who's new to Powershell or isn't much familiar its syntaxes (or is just lazy :D ).
 
 ## How to use the tool
-- Load the UI -> [https://richardricoklar.github.io/PowershellCommandHelper/](PowershellCommandHelper)
+- Load the UI -> [PowershellCommandHelper](https://richardricoklar.github.io/PowershellCommandHelper/)
 - Select the permissions you'll need the syntax for
 - Fill in the form
 - Select "Generate Command"
